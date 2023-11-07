@@ -1,0 +1,44 @@
+@import 'reset.css';
+@import 'fonts.css';
+/* slick */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+* {
+    box-sizing: border-box;
+}
+
+/* colors */
+:root {
+    --white: '#fff';
+    --black: '#000';
+}
+
+/* fonts */
+:root {
+    --helvetica: 'HelveticaNeueCyr', sans-serif;
+    --arial-bold:'ArialBold', sans-serif;
+    --arial:'Arial', sans-serif;
+    --liSu:'LiSu', sans-serif;
+    --simsunBold:'SimsunBold', sans-serif;
+}
+
+:root[lang="en"] {
+    --noto-serif:'Noto Serif SC', serif;
+}
+
+:root[lang="zh-cn"] {
+    --noto-serif:'Noto Serif SC', serif;
+}
+
+:root[lang="zh-tw"] {
+    --noto-serif:'Noto Serif TC', serif;
+}
+
+.ck-balloon-panel {
+    z-index: 9999999999999 !important;
+}
+
+img{
+    pointer-events: none !important;
+}

@@ -1,0 +1,74 @@
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialLink {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    &:not(:first-child) {
+        margin-left: 16px;
+    }
+
+    @media screen and (max-width:1660px) {
+        margin: unset;
+    }
+
+    svg{
+        width: 100%;
+
+        path{
+            transition: .2s ease;
+            fill: rgb(68, 117, 246)!important;
+            stroke: transparent!important;
+        }
+        circle{
+            fill: transparent;
+            transition: .2s ease;
+            stroke: rgb(68, 117, 246)!important;
+        }
+    }
+
+    &:hover{
+        svg{
+            path{
+                fill: #FFFFFF!important;
+            }
+            circle{
+                fill: rgb(68, 117, 246)!important;
+                stroke: rgb(68, 117, 246)!important;
+            }
+        }
+    }
+}
+
+.mail{
+    path{
+        transform: translateX(11.5px) translateY(13.5px);
+    }
+}
+
+.tooltipShare{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFAFA !important;
+    border-radius: 30px !important;
+    padding: 8px 4px 4px !important;
+    box-shadow: 3px 3px 6px #D9D9D996 !important;
+    height: 48px !important;
+}
+
+.popper{
+    pointer-events: auto !important;
+}
+
+.share{
+    cursor: pointer;
+}

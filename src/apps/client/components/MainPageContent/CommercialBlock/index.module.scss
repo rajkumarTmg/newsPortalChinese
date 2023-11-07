@@ -1,0 +1,183 @@
+.root {
+    height: 307px;
+    box-shadow: 5px 5px 8px #E5E0E0E6;
+    border-radius: 23px;
+    grid-column: 1/3;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    &.wide{
+        max-width: 1555px;
+    }
+    @media screen and (max-width: 768px) {
+        grid-column: 1;
+    }
+
+    @media screen and (max-width:1440px) {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width:525px) {
+        padding: 0;
+    }
+}
+
+.listItem {
+    display: block;
+    width: 230px;
+    height: 240px;
+    position: relative;
+    &:not(:first-child) {
+        margin-left: 20px;
+    }
+}
+
+.tradeBtn {
+    font: 18px/1px var(--arial-bold);
+    letter-spacing: 0.99px;
+    color: #E5590F;
+    height: 37px;
+    background: #FFFAFA 0% 0% no-repeat padding-box;
+    box-shadow: 2px 3px 6px #E5E0E0E6;
+    border-radius: 48px;
+    padding: 2px 10px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1.1px;
+    max-width: 130px;
+    margin: 14px 0 0 auto;
+    @media screen and (max-width:768px) {
+        display: none;
+    }
+}
+
+.googleAd{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 1440px) {
+        display: none;
+    }
+}
+
+.link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    & img {
+        border-radius: 23px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.hiddenDesktop{
+        display: none;
+
+        @media screen and (max-width: 1440px) {
+            display: block;
+        }
+    }
+
+    &.hiddenSmallDesktop{
+        display: block;
+
+        @media screen and (max-width: 1440px) {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &.hiddenMobile{
+        display: block;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.placeholder{
+    background: grey;
+    border-radius: 12px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+
+    &.hiddenDesktop{
+        display: none;
+
+        @media screen and (max-width: 1440px) {
+            display: flex;
+        }
+    }
+
+    &.hiddenSmallDesktop{
+        display: flex;
+
+        @media screen and (max-width: 1440px) {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &.hiddenMobile{
+        display: flex;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.googleAdSmallDesktop{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 1440px) {
+        display: block;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.googleAdMobile{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}

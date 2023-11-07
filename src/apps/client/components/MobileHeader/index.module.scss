@@ -1,0 +1,257 @@
+.root {
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: block;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.bgImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.wrapper {
+    position: relative;
+    padding: 10px 20px 10px 30px;
+
+    @media screen and (max-width: 375px) {
+        padding: 10px 20px 10px 20px;
+    }
+}
+
+.top {
+    display: flex;
+}
+
+.socials {
+    flex: 1;
+}
+
+.logo {
+    transform: translateY(-10px);
+    position: relative;
+    // width: 151px;
+    width: 177px;
+    height: 50px;
+    flex-shrink: 0;
+
+    @media screen and (max-width: 400px){
+        // width: 140px;
+        width: 128px;
+        height: 34px;
+        margin-bottom: 14px;
+    }
+}
+
+.logoImage{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+
+    svg{
+        width: 100%;
+        height: auto;
+
+        text{
+            font-family: var(--liSu);
+        }
+    }
+}
+
+.weather {
+    position: absolute;
+    top: 17px;
+    right: 0;
+    // transform: translateX(100%);
+    transform: translateX(calc(100% - 20px));
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 360px){
+        top: 102px;
+    }
+}
+
+.weatherIcon {
+    width: 24px;
+    height: 24px;
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.weatherSwitcher {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    & span {
+        font: 9px/11px var(--helvetica);
+        color: #3F71F7;
+    }
+
+    &.isCelsius{
+        flex-direction: row-reverse;
+
+        & .weatherButton{
+            &:first-child{
+                color: #7B6969;
+            }
+            &:last-child{
+                color: #3F71F7;
+            }
+        }
+    }
+    & .weatherButton{
+        &:last-child{
+            color: #7B6969;
+        }
+    }
+}
+
+.weatherTemp {
+    font: 11px/11px var(--helvetica);
+    color: #3F71F7;
+}
+
+.weatherButton {
+    outline: none;
+    border: none;
+    background: none;
+    font: 9px/11px var(--helvetica);
+    color: #3F71F7;
+}
+
+.user {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+
+    .signOut{
+        display: none;
+        width: 35px;
+        height: 32px;
+        border-radius: 50%;
+        font: normal normal 12px/1 var(--arial-bold);
+        letter-spacing: 0.64px;
+        flex-shrink: 0;
+        background: rgba(247, 247, 247, .63);
+        border: 1px solid rgba(255, 255, 255, .63);
+        color: #AC8E75;
+        transition: .3s ease;
+
+        &:hover{
+            background: #3f71f7;
+            color: #FFFFFF;
+            border-color: #3f71f7;
+        }
+
+        &:active{
+            background: #3f71f7;
+            color: #FFFFFF;
+            border-color: #3f71f7;
+        }
+    }
+
+    &.isUser{
+        .signOut{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img{
+            display: none;
+        }
+    }
+}
+
+.middle {
+    display: flex;
+    margin-top: -2px;
+    position: relative;
+}
+
+.buttons {
+    display: grid;
+    gap: 5px;
+    flex: 1;
+    margin-right: auto;
+}
+
+.button {
+    background: transparent;
+    box-shadow: 0px 1px 1px #DDD7D7B7;
+    border: 0.6499999761581421px solid #F7F7F7;
+    border-radius: 4px;
+    font: 11px/16px var(--noto-serif);
+    height: 16px;
+    color: #3F71F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+    outline: none;
+    transition: .2s ease;
+
+    &:hover{
+        background: #2699FB;
+        border: 0.6499999761581421px solid #2699FB;
+        color: #FFFFFF;
+    }
+
+    &:active{
+        background: #2699FB;
+        border: 0.6499999761581421px solid #2699FB;
+        color: #FFFFFF;
+    }
+}
+
+.audio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom {
+    padding: 5px 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.bottomWrapper {
+    display: flex;
+}
+
+.date {
+    flex: 1;
+    margin-right: auto;
+    font: 12px/14px var(--arial);
+    color: #464040;
+}
+
+.city {
+    flex: 1;
+    text-align: center;
+    font: 11px/14px var(--helvetica);
+    color: #7B6969;
+}
+
+.empty {
+    flex: 1;
+    margin-left: auto;
+}

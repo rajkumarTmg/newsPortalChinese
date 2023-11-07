@@ -1,0 +1,68 @@
+.root {
+    display: none;
+    flex-direction: column;
+    align-self: flex-end;
+    @media screen and (max-width:1440px) {
+        display: flex;
+        margin-right: 20px;
+        width: 40px;
+    }
+
+    @media screen and (max-width: 526px) {
+        display: none;
+    }
+}
+
+.statisticItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & svg path {
+        fill: #726256EB;
+    }
+    &:nth-child(3) {
+        & svg path {
+            stroke: #726256EB;
+            fill: none;
+        }
+    }
+    &:not(:first-child) {
+        margin-top: 22px;
+    }
+
+    &.liked{
+        svg{
+            path{
+                fill: #D55A2D;
+            }
+        }
+    }
+
+    .likeButton{
+        cursor: pointer;
+    }
+}
+
+.count {
+    margin-top: 6px;
+    font: 23px/24px var(--helvetica);
+    color: #726256EB;
+}
+
+.letters {
+    cursor: pointer;
+    margin-top: 14px;
+    color: #726256EB;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    & span {
+        &:nth-child(1) {
+            font: 700 35px/40px var(--noto-serif);
+        }
+        &:nth-child(2) {
+            font: 700 55px/40px var(--noto-serif);
+        }
+    }
+}

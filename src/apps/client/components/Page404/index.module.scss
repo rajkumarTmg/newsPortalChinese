@@ -1,0 +1,123 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1300;
+  background: #FFFFFF;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 23px 30px 0;
+
+  @media screen and (max-width:1280px) {
+  }
+
+  @media screen and (max-width:526px) {
+    padding: 23px 15px 0;
+  }
+}
+
+.mainLogo {
+  width: 324px;
+  height: 110px;
+  position: relative;
+
+  @media screen and (max-width:1440px) {
+    width: 284px;
+    height: 88px;
+  }
+}
+
+.logoImage{
+  cursor: pointer;
+}
+
+.body{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  width: 100%;
+
+  @media screen and (max-width:526px) {
+    padding: 15px;
+  }
+}
+
+.headerText{
+  color: #6F452098;
+  text-align: center;
+  font: normal normal normal 45px/45px var(--liSu);
+  letter-spacing: 2.02px;
+  margin-bottom: 91px;
+
+  @media screen and (max-width:1280px) {
+    font: normal normal normal 35px/35px var(--liSu);
+    letter-spacing: 1.57px;
+    margin-bottom: 71px;
+  }
+
+  @media screen and (max-width:526px) {
+    font: normal normal normal 25px/25px var(--liSu);
+    letter-spacing: 1.12px;
+    margin-bottom: 51px;
+  }
+}
+
+.link{
+  background: #FFFAFA;
+  box-shadow: 2px 3px 6px #E5E0E0E6;
+  font: normal normal 700 24px/1 var(--helvetica);
+  letter-spacing: 0.24px;
+  color: #3F71F7;
+  position: relative;
+  padding: 6px 60px;
+  height: 46px;
+  border-radius: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .2s ease;
+
+  &:hover{
+    background: #D55A2D;
+    color: #FFFFFF;
+
+    svg{
+      path{
+        fill: #FFFFFF;
+      }
+    }
+  }
+
+  @media (max-width: 1280px){
+    font: 700 19px/1;
+  }
+}
+
+.icon{
+  transition: .2s ease;
+  position: absolute;
+  right: 17px;
+  width: auto;
+  height: 21px;
+
+  path{
+    fill: #3f71f7;
+  }
+}

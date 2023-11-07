@@ -1,0 +1,505 @@
+.portalWrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+.root {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .player{
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover {
+        .controls {
+            opacity: 1;
+        }
+        .progressWrapper {
+            opacity: 1;
+        }
+        .controlsWrapper {
+            opacity: 1;
+        }
+        .buttonsWrapper {
+            opacity: 1;
+        }
+    }
+
+    button{
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: none;
+
+        span{
+            display: flex;
+            align-items: center;
+
+            svg{
+                &:not(:last-child){
+                    margin-right: 12px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1280px){
+            svg {
+                height: 19px;
+                width: auto;
+            }
+            span {
+                svg {
+                    &:not(:last-child){
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.articlePage{
+        .playButton {
+            left: unset;
+            right: 30px;
+            top: 25px;
+            width: 43px;
+            height: 43px;
+
+            span{
+                svg{
+                    height: 19px;
+                    width: auto;
+                    transform: scale(1) translateX(2px);
+                }
+            }
+
+            &.played{
+                span {
+                    svg {
+                        transform: scale(1) translateX(0);
+                    }
+                }
+            }
+        }
+
+        button{
+            svg {
+                height: 27px;
+                width: auto;
+            }
+            span {
+                svg {
+                    &:not(:last-child){
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 1280px) {
+            button {
+                svg {
+                    height: 19px;
+                    width: auto;
+                }
+            }
+        }
+
+        @media screen and (max-width: 526px) {
+            & .playButton {
+                width: 30px;
+                height: 30px;
+
+                @media screen and (max-width: 400px) {
+                    right: 15px;
+                    top: 15px;
+                }
+            }
+        }
+    }
+
+    &.fullscreen {
+        border-radius: 0;
+    }
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    object-fit: fill;
+}
+
+.preview {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+    background: gray;
+    z-index: 1;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.playButton{
+    opacity: 1;
+    position: absolute;
+    transition: opacity 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    left: calc(50% - 54px);
+    top: calc(50% - 54px);
+
+    &:before {
+        content: '';
+        z-index: -1;
+        width: calc(100% + 100px);
+        height: calc(100% + 100px);
+        position: absolute;
+        cursor: auto;
+    }
+
+    span{
+        svg{
+            transform: scale(3) translateX(2px);
+        }
+    }
+
+    &.hidden {
+        &:hover{
+            opacity: 1;
+        }
+    }
+    &.paused{
+        span {
+            svg {
+                transform: scale(3) translateX(2px);
+            }
+        }
+    }
+    &.played {
+        span{
+            svg{
+                transform: scale(1) translateX(0);
+
+                path{
+                    stroke: #d55a2d;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:1280px) {
+        left: calc(50% - 22px);
+        top: calc(50% - 22px);
+
+        span {
+            svg {
+                height: 19px;
+                width: auto;
+                transform: scale(1) translateX(2px) !important;
+            }
+        }
+
+        &.played {
+            span {
+                svg {
+                    transform: scale(1) translateX(0) !important;
+                }
+            }
+        }
+
+        &:before {
+            width: calc(100% + 50px);
+            height: calc(100% + 50px);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.button{
+    width: 108px;
+    height: 108px;
+    background: #DDD7D7B7 !important;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width:1280px) {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.controls {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 15px;
+    width: 100%;
+    height: 150px;
+    z-index: 2;
+    opacity: 0;
+    @media screen and (max-width: 1280px) {
+        height: 50px;
+        bottom: 20px;
+    }
+}
+
+.progressWrapper {
+    opacity: 0;
+    position: absolute;
+    z-index: 9999999999999;
+    transform: translateY(calc(-58px - 20px));
+    bottom: 45px;
+    width: calc(100% - 50px - 33px);
+    left: 33px;
+    @media screen and (max-width: 1280px) {
+        bottom: 20px;
+        width: calc(100% - 18px - 18px);
+        left: 18px;
+        transform: translateY(calc(-24px - 18px));
+    }
+    @media screen and (max-width: 526px) {
+        transform: translateY(calc(-24px - 8px));
+    }
+}
+
+.progressInner {
+    width: 100%;
+    position: relative;
+}
+
+.progress {
+    width: 100%;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    background-image: linear-gradient(#E5590F, #E5590F);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+     &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        opacity: 0;
+        height: 5px;
+        width: 5px;
+        background: #E5590F;
+        cursor: pointer;
+      }
+
+     &::-moz-range-thumb {
+        -webkit-appearance: none;
+        height: 5px;
+        width: 5px;
+        cursor: pointer;
+      }
+
+     &::-ms-thumb {
+        -webkit-appearance: none;
+        height: 5px;
+        width: 5px;
+        cursor: pointer;
+      }
+
+      &::-webkit-slider-runnable-track  {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+      }
+
+     &::-moz-range-track {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+      }
+
+     &::-ms-track {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+      }
+}
+
+
+
+.controlsWrapper {
+    opacity: 0;
+    position: absolute;
+    z-index: 9999999999999;
+    bottom: 45px;
+    left: 75px;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 1280px) {
+        left: 18px;
+        bottom: 20px;
+    }
+}
+
+.buttonsWrapper{
+    opacity: 0;
+    position: absolute;
+    z-index: 9999999999999;
+    bottom: 45px;
+    display: flex;
+    align-items: center;
+    right: 75px;
+
+    @media screen and (max-width: 1280px) {
+        right: 26px;
+        bottom: 20px;
+    }
+}
+
+.controlForward {
+    margin-left: 54px;
+    @media screen and (max-width: 1280px) {
+        margin-left: 12px;
+    }
+}
+
+.volumeWrapper {
+    position: relative;
+    &:hover {
+        .inputVolume {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+    margin-left: 54px;
+    @media screen and (max-width: 1280px) {
+        margin-left: 18px;
+    }
+}
+
+.inputVolume {
+    position: absolute;
+    top: -25px;
+    right: -100px;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 5px 0;
+}
+
+.timeInfo {
+    font: 29px/28px var(--arial-bold);
+    letter-spacing: 0.54px;
+    color: #E2DFDF;
+    margin-left: 68px;
+    @media screen and (max-width: 1280px) {
+        margin-left: 16px;
+        font: 19px/1 var(--arial-bold);
+        letter-spacing: 0.34px;
+    }
+}
+
+.fullScreen {
+    margin-left: auto;
+}
+
+.description {
+    font: normal normal 600 22px/32px var(--noto-serif);
+    letter-spacing: 0.66px;
+    color: #E5E0E0E6F2;
+    padding: 11px 10px 10px 22px;
+    background: rgba($color: #12191fc7, $alpha: 0.7);
+    border-radius: 3px;
+    z-index: 4;
+    position: absolute;
+    bottom: 0;
+    max-width: 95%;
+    transition: opacity 0.3s ease;
+    word-break: break-all;
+
+    &.hidden{
+        pointer-events: none;
+    }
+
+    @media screen and (max-width:1440px) {
+        font: normal normal 700 27px/38px var(--noto-serif);
+        color: #FFFFFF;
+        background-color: transparent;
+        padding: 0 14px 0 20px;
+        bottom: 40px;
+        height: 45px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    @media screen and (max-width: 1280px){
+        .icon{
+            display: inline-block;
+            margin-right: 10px;
+            width: 30px;
+
+            svg{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: 526px){
+        display: none;
+    }
+}
+
+.icon{
+    display: none;
+}

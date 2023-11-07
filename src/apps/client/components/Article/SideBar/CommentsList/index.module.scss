@@ -1,0 +1,132 @@
+.root {
+    margin: 60px auto 0;
+    max-width: 377px;
+    width: calc(100% + 20px);
+    max-height: 0;
+    flex-shrink: 0;
+    transform: translateX(5px);
+
+    & > div {
+        height: 100%;
+    }
+
+    & :global(.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle){
+        background: #F8F4F4 !important;
+    }
+
+    & :global(.os-padding) {
+        height: calc(100% + 1px) !important;
+    }
+
+    @media screen and (max-width:1440px) {
+        display: none;
+    }
+    @media screen and (max-width: 526px) {
+        display: block;
+        grid-row: 2;
+        max-height: 400px;
+        overflow: auto;
+        padding: 0 10px;
+        transform: unset;
+        width: 100%;
+        max-width: calc(100vw - 40px);
+    }
+}
+
+.commentsList {
+    display: grid;
+    row-gap: 33px;
+    padding-right: 20px;
+    padding-left: 0px;
+    @media screen and (max-width:1500px) {
+        padding-right: 20px;
+        padding-left: 0px;
+    }
+    @media screen and (max-width: 526px) {
+        padding: 0;
+    }
+}
+
+.comment {
+    padding-bottom: 40px;
+    border-bottom: 1px solid  #B5ABAB;
+}
+
+.commentInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author {
+    font: 19px/22px var(--arial-bold);
+    color: #302C58;
+}
+
+.date {
+    margin-left: 10px;
+    font: 16px/24px var(--arial-bold);
+    color: #847E7E;
+    text-transform: capitalize;
+    @media screen and (max-width: 526px) {
+        font-size: 15px;
+    }
+}
+
+.text {
+    margin-top: 20px;
+    font: 17px/28px var(--noto-serif);
+    color: #292121E5;
+    @media screen and (max-width: 526px) {
+        font-size: 15px;
+    }
+}
+
+.stats {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 526px) {
+        justify-content: flex-end;
+        margin-top: 15px;
+    }
+}
+
+.statsItem {
+    display: flex;
+    align-items: center;
+    & svg {
+        width: 18px;
+        height: 18px;
+    }
+    &:not(:first-child) {
+        margin-left: 15px;
+    }
+
+    &.liked{
+        svg{
+            path{
+                fill: #D55A2D;
+            }
+        }
+    }
+
+    .likeButton{
+        cursor: pointer;
+    }
+    @media screen and (max-width: 526px) {
+        & svg {
+            width: 15px;
+            height: 15px;
+        }
+        &:last-child {
+            display: flex;
+        }
+    }
+}
+
+.count {
+    margin-left: 4px;
+    font: 13px/24px var(--arial);
+    color: #3F71F7;
+}

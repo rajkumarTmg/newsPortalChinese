@@ -1,0 +1,33 @@
+.root {
+    width: 100%;
+    padding-bottom: 58%;
+    position: relative;
+    margin-bottom: 70px;
+
+    &:not(:first-child){
+        margin-top: 15px;
+    }
+
+    & > div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and (max-width:1440px) {
+        max-width: calc(100% - 285px - 55px);
+        margin-left: auto;
+    }
+
+    @media screen and (max-width:1280px) {
+        margin-bottom: 55px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        max-width: 100%;
+    }
+
+    @media screen and (max-width: 526px) {
+        margin-bottom: 25px;
+    }
+}

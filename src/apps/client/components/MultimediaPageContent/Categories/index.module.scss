@@ -1,0 +1,128 @@
+.root {
+    grid-column: 1;
+    grid-row: 1/3;
+    margin-top: 20px;
+    @media screen and (max-width:1440px) {
+        margin-top: 0;
+    }
+    @media screen and (max-width:1280px) {
+        margin-top: -25px;
+    }
+    @media screen and (max-width:768px) {
+        display: none;
+    }
+}
+
+.homeIcon{
+    height: 25px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.category {
+    white-space: nowrap;
+    font: 17px/20px var(--simsunBold);
+    color: #83776EEB;
+    display: block;
+    transition: color .3s ease;
+    padding-right: 2px;
+
+    &:hover{
+        color: #D55A2DFC;
+        padding-right: 0;
+
+        span{
+            border-color: #83776EEB;
+        }
+    }
+
+    &:active{
+        color: #D55A2DFC;
+        padding-right: 0;
+
+        span{
+            border-color: #83776EEB;
+        }
+    }
+
+    span{
+        margin: 0 5px;
+        color: #D6CFCFFC;
+        display: inline-block;
+        padding: 5px;
+        width: 14px;
+        height: 14px;
+        transition: .3s ease;
+        flex-shrink: 0;
+        cursor: pointer;
+
+        &:before{
+            content: '';
+            border-left: 2px solid #D6CFCFFC;
+            border-top: 2px solid #D6CFCFFC;
+            width: 9px;
+            height: 9px;
+            display: block;
+            transform: rotate(135deg) translateY(3px);
+        }
+
+        &:hover{
+            &:before {
+                border-color: #83776EEB;
+            }
+        }
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    @media screen and (max-width:1280px) {
+        font: 17px/20px var(--simsunBold);
+    }
+}
+
+.active {
+    color: #D55A2DFC;
+
+    span{
+        border-color: #83776EEB;
+    }
+}
+
+.link{
+    color: inherit;
+}
+
+.subCategory {
+    margin: 0 0 16px 15px;
+    font: normal normal 17px/20px var(--simsunBold);
+    color: #83776EEB;
+    display: block;
+    transition: color .3s ease;
+
+    &:hover{
+        color: #D55A2D;
+    }
+
+    &:active{
+        color: #D55A2D;
+    }
+}
+
+.subActive {
+    color: #D55A2D;
+}
+
+.subcategories{
+    margin-top: -8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: .5s ease;
+
+    &.expandedNot{
+        max-height: 0!important;
+    }
+}

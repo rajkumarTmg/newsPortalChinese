@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('../../../../public/fonts/HelveticaNeueCyr-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ArialBold';
+    src: url('../../../../public/fonts/Arial-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arial';
+    src: url('../../../../public/fonts/Arial.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LiSu';
+    src: url('../../../../public/fonts/SIMLI.TTF') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SimsunBold';
+    src: url('../../../../public/fonts/SimSun-ExtB.ttf') format('truetype');
+    font-display: swap;
+}

@@ -1,0 +1,12 @@
+.option {
+    font: 18px/50px var(--arial);
+    color: #AC8E75;
+
+    @media screen and (max-width: 768px) {
+        font: 11px/1 var(--arial);
+    }
+
+    &:not(:last-child){
+        margin-right: 5px;
+    }
+}

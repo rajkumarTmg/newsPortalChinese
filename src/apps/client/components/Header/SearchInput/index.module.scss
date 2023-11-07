@@ -1,0 +1,65 @@
+.inputWrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    background: rgba(255, 255, 255, 0.72);
+    border: none;
+    -webkit-appearance: none;
+    box-shadow: 0px 3px 6px #D9D9D996;
+    border-radius: 14px;
+    outline: none;
+    width: 100%;
+    padding: 10px 80px 10px 64px;
+    font: normal normal 600 35px/49px var(--noto-serif);
+    letter-spacing: 2.1px;
+    color: #3C2009;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, max-height 0s 0.3s ease;
+    max-width: 1023px;
+    margin-left: auto;
+    max-height: 0;
+    height: 88px;
+}
+
+.input::placeholder{
+    color: #050000;
+}
+
+.open {
+    .input {
+        opacity: 1;
+        max-height: 88px;
+        pointer-events: all;
+        transition: opacity 0.3s ease, max-height 0s 0s ease;
+    }
+
+    .label {
+        top: 27px;
+        transition: top 0s 0s ease;
+    }
+}
+
+.label {
+    position: absolute;
+    width: 33px;
+    height: 34px;
+    right: 20px;
+    top: -41px;
+    cursor: pointer;
+    transition: top 0s 0.3s ease;
+}
+
+.icon{
+    display: block;
+    width: 100%;
+
+    svg{
+        width: 100%;
+        height: auto;
+    }
+}

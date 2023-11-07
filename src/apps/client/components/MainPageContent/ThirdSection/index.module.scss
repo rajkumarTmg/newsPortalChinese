@@ -1,0 +1,192 @@
+.root {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 145px 1fr;
+    grid-column-gap: 43px;
+    grid-row-gap: 0px;
+    margin: 45px 0 60px;
+    @media screen and (max-width:1440px) {
+        grid-template-columns: auto 230px;
+        column-gap: 73px;
+        margin: 45px 0 0 0;
+        padding-left: 21px;
+        padding-right: 41px;
+    }
+    @media screen and (max-width:1024px) {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @media screen and (max-width: 768px) {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        grid-template-rows: unset;
+        margin-bottom: 60px;
+    }
+}
+
+
+.commercial {
+    width: 100%;
+    height: 145px;
+    box-shadow: 5px 5px 8px #E5E0E0E6;
+    border-radius: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: 1 / 2 / 2 / 3;
+    & svg {
+        height: 35px;
+        width: 35px;
+    }
+    @media screen and (max-width:1440px) {
+        grid-column: 2;
+        grid-row: 1/3;
+        height: 100%;
+        margin-top: 20px;
+        border-radius: 12px;
+        & svg {
+            display: none;
+        }
+    }
+    @media screen and (max-width:1024px) {
+        grid-column: 1;
+        grid-row: unset;
+        grid-area: unset;
+        height: 192px;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.commercialLink {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    & img {
+        border-radius: 12px;
+        object-fit: contain;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+    }
+    @media screen and (max-width: 1440px) {
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+.desktopContent{
+    display: block;
+    @media screen and (max-width: 1440px) {
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+.placeholder{
+    background: grey;
+    border-radius: 12px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+
+    @media screen and (max-width: 1440px) {
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.subLink {
+    height: 88px;
+    background: #FFFAFA ;
+    box-shadow: 5px 5px 8px #E5E0E0E6;
+    border-radius: 48px;
+    border: none;
+    outline: none;
+    padding: 25px 74px 25px 43px;
+    font: 33px/70px var(--arial-bold);
+    letter-spacing: 1.81px;
+    color: #E5590F;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 732px;
+    margin: 46px 0 0 25px;
+    cursor: pointer;
+    transition: .2s ease;
+
+    &:hover{
+        background: #D55A2D;
+        color: #FFFFFF;
+
+        svg{
+            path{
+                fill: #FFFFFF;
+            }
+        }
+    }
+
+    &:active{
+        background: #D55A2D;
+        color: #FFFFFF;
+
+        svg{
+            path{
+                fill: #FFFFFF;
+            }
+        }
+    }
+
+    @media screen and (max-width:1440px) {
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        display: flex;
+        height: 45px;
+        margin: 40px 0 0 0;
+        font: 24px/1 var(--arial-bold);
+        padding: 8px 35px 8px 20px;
+    }
+}
+
+.subSvg {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    & svg {
+        & path {
+            fill: #E5610F;
+            transition: .2s ease;
+        }
+    }
+}
+
+.googleAd{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 1440px) {
+        display: block;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}

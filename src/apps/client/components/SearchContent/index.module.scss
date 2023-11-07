@@ -1,0 +1,68 @@
+.root {
+    padding: 80px 97px 60px 57px;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width:1700px) {
+        padding: 80px 60px 40px;
+    }
+    @media screen and (max-width: 768px) {
+        padding: 40px 20px 0;
+    }
+}
+
+.upButton {
+    width: 54px;
+    height: 54px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 60px;
+    bottom: 80px;
+    padding: 0;
+    & svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    svg{
+        circle{
+            fill: #F7EFEF;
+            transition: .2s ease;
+        }
+    }
+
+    &:hover{
+        svg{
+            circle{
+                fill: #D55A2D;
+            }
+        }
+    }
+
+    @media screen and (max-width:1700px) {
+        bottom: 60px;
+    }
+    @media screen and (max-width: 1440px) {
+        left: 25px;
+        bottom: 60px;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.header{
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}

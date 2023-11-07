@@ -1,0 +1,402 @@
+.root {
+    grid-row: 3;
+
+    &.isPlaying{
+        .controlButton{
+            &:nth-child(2){
+                &:not(:disabled){
+                    svg{
+                        color: #FFFFFF;
+
+                        path{
+                            &:nth-child(2){
+                                fill: #E5590F;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.isPaused{
+        .controlButton{
+            &:nth-child(3){
+                &:not(:disabled) {
+                    svg {
+                        color: #FFFFFF;
+
+                        path {
+                            &:nth-child(1) {
+                                fill: #E5590F;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.isStopped{
+        .controlButton{
+            &:nth-child(1){
+                &:not(:disabled) {
+                    svg {
+                        color: #FFFFFF;
+
+                        path {
+                            &:nth-child(2) {
+                                fill: #E5590F;
+                                color: #FFFFFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bg{
+    position: absolute;
+    top: -37px;
+    left: -13px;
+    width: 200px;
+    z-index: -1;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.bgImage{
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    position: relative;
+    z-index: 11;
+    margin-top: 10px;
+    width: 280px;
+    height: 80px;
+
+    @media screen and (max-width: 1440px) {
+        height: 30px;
+    }
+    @media screen and (max-width: 1180px) {
+        margin-top: 20px;
+    }
+    @media screen and (max-width: 768px) {
+        margin-top: 0px;
+        width: 150px;
+        justify-content: center;
+        transform: translateX(20px);
+    }
+}
+
+.player{
+    padding: 0!important;
+    background: transparent!important;
+    border: none!important;
+    box-shadow: none!important;
+
+    & :global(.rhap_volume-button){
+        flex: 0 0 37px;
+
+        svg {
+            path {
+                stroke: #AC8E75;
+                transition: .3s ease;
+            }
+        }
+
+        &:hover{
+            svg{
+                path{
+                    fill: #E5590F;
+                    stroke: #FFFFFF;
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            flex: 0 0 20px;
+        }
+    }
+    & :global(.rhap_volume-controls){
+        height: 32px;
+        transform: translateY(-16px);
+
+        @media screen and (max-width: 768px) {
+            height: 17.4px;
+            transform: none;
+        }
+
+        & > div{
+            height: 32px;
+
+            @media screen and (max-width: 768px) {
+                height: 17.4px;
+            }
+        }
+
+        button{
+            height: 100%;
+            outline: rgba(104, 141, 240, 1);
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: 768px) {
+                width: 20px;
+                max-width: 20px;
+            }
+        }
+
+        svg{
+            height: 32px;
+            width: auto;
+
+            @media screen and (max-width: 768px) {
+                height: 17.4px;
+            }
+        }
+
+        &:hover{
+            & :global(.rhap_volume-bar-area){
+                opacity: 1;
+            }
+        }
+    }
+
+    & :global(.rhap_volume-bar-area){
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    & :global(.rhap_current-time){
+        letter-spacing: 0px;
+        color: #5C4430A7;
+        font-size: 15px;
+        font: 15px/1 var(--arial);
+
+        @media screen and (max-width: 1440px) {
+            font: 500 15px/17px var(--noto-serif);
+            letter-spacing: 0px;
+            color: #5C4430A7;
+        }
+
+        @media screen and (max-width: 768px) {
+            font: 11px/12px var(--arial);
+            color: #5C4430A7;
+        }
+    }
+
+    & :global(.rhap_progress-section){
+        transform: translateY(10px);
+        @media screen and (max-width: 1440px) {
+            height: 0px;
+            transform: translateY(10px);
+        }
+        @media screen and (max-width: 1180px) {
+            transform: translateY(15px);
+        }
+        @media screen and (max-width: 768px) {
+            height: auto;
+            transform: translateY(10px);
+        }
+    }
+
+    & :global(.rhap_progress-container){
+        outline: rgba(104, 141, 240, 1);
+        margin-left: 0;
+    }
+
+    & :global(.rhap_progress-indicator),
+    & :global(.rhap_volume-indicator){
+        background-color: #E78876;
+    }
+
+    & :global(.rhap_progress-bar-show-download),
+    & :global(.rhap_download-progress),
+    & :global(.rhap_volume-bar){
+        background-color: rgba(104, 141, 240, 0.25);
+    }
+
+    & :global(.rhap_progress-filled){
+        background-color: rgba(104, 141, 240, 1);
+    }
+
+    & :global(.rhap_footer){
+        margin-top: 20px;
+
+        @media screen and (max-width: 1440px) {
+            margin-top: 0;
+        }
+
+        @media screen and (max-width: 1180px) {
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin-top: 0;
+        }
+    }
+
+    & :global(.rhap_controls-section){
+        margin-bottom: 0;
+    }
+}
+
+.controlButtons {
+    display: flex;
+    align-items: center;
+    width: 175px;
+    height: 80px;
+    margin-top: 10px;
+    background-image: url('/images/audio-bg.png');
+
+    @media screen and (max-width: 1440px) {
+        height: 30px;
+    }
+    @media screen and (max-width: 1180px) {
+        margin-top: 20px;
+    }
+    @media screen and (max-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.volumeDivider{
+    width: 32px;
+
+    @media screen and (max-width: 768px) {
+        width: 14px;
+    }
+}
+
+.controlButton {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    flex:  0 0 auto;
+    & svg {
+        width: 100%;
+        height: 100%;
+        color: #AC8E75;
+
+        path{
+            transition: .3s ease;
+        }
+    }
+    &:not(:first-child) {
+        margin-left: 32px;
+    }
+
+    &:nth-child(1){
+       &:hover{
+           svg {
+               color: #FFFFFF;
+
+               path {
+                   &:nth-child(2) {
+                       fill: #E5590F;
+                       color: #FFFFFF;
+                   }
+               }
+           }
+       }
+    }
+
+    &:nth-child(2){
+        &:hover{
+            svg{
+                color: #FFFFFF;
+
+                path{
+                    &:nth-child(2){
+                        fill: #E5590F;
+                    }
+                }
+            }
+        }
+    }
+
+    &:nth-child(3){
+        transform: translateY(-5px);
+
+        &:hover{
+            svg{
+                color: #FFFFFF;
+
+                path{
+                    &:nth-child(1){
+                        fill: #E5590F;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            transform: none;
+        }
+    }
+    &:disabled {
+        pointer-events: none;
+        cursor: unset;
+        &:nth-child(1) {
+            & svg {
+                color: #AC8E75;
+            }
+        }
+        &:nth-child(2){
+            & svg {
+                color: #AC8E75;
+            }
+        }
+        &:nth-child(3) {
+            & svg {
+                color: #AC8E75;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        height: 18px;
+        width: 18px;
+
+        &:not(:first-child) {
+            margin-left: 14px;
+        }
+    }
+}
+
+.audioName {
+    white-space: nowrap;
+    font: 18px/21px var(--arial);
+    letter-spacing: 0.1px;
+    color: #5C4430A7;
+
+    @media screen and (max-width: 1440px) {
+        font: 14px/20px var(--arial);
+        letter-spacing: 0px;
+        transform: translateX(-15px);
+        margin-top: 25px;
+    }
+    @media screen and (max-width: 1180px) {
+        margin-top: 15px;
+        transform: translateX(0);
+    }
+    @media screen and (max-width: 768px) {
+        font: 11px/13px var(--arial);
+        transform: translateX(-17px);
+        text-align: center;
+    }
+}

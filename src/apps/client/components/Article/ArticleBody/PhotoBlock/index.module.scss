@@ -1,0 +1,173 @@
+.root {
+    width: 100%;
+    position: relative;
+    margin: 35px 0;
+    border-bottom: 1px solid #9F989896;
+    padding-bottom: 15px;
+
+    &.leftPosition{
+        float: left;
+        margin-right: 40px;
+
+        &.full{
+            float: unset;
+            margin-right: 0;
+
+            @media screen and (max-width:1024px) {
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+
+            @media screen and (max-width: 526px) {
+                margin: 25px 0;
+            }
+        }
+
+        @media screen and (max-width:1440px) {
+            max-width: calc(100% - 285px - 55px);
+            margin-right: 25px;
+        }
+
+        @media screen and (max-width:1200px) {
+            width: 100% !important;
+            margin-right: 0;
+            margin-left: auto;
+            margin-bottom: 40px;
+            float: unset;
+        }
+
+        @media screen and (max-width:1024px) {
+            width: 100% !important;
+            max-width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    &.rightPosition{
+        float: right;
+        margin-left: 40px;
+
+        &.full{
+            float: unset;
+            margin-right: 0;
+
+            @media screen and (max-width:1024px) {
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+
+            @media screen and (max-width: 526px) {
+                margin: 25px 0;
+            }
+        }
+
+        @media screen and (max-width:1440px) {
+            max-width: calc(100% - 285px - 55px);
+            margin-left: 25px;
+        }
+
+        @media screen and (max-width:1200px) {
+            width: 100% !important;
+            margin-left: auto;
+            margin-top: 40px;
+            float: unset;
+        }
+
+        @media screen and (max-width:1024px) {
+            width: 100% !important;
+            max-width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: 1440px) {
+        max-width: calc(100% - 285px - 55px);
+        margin-left: auto;
+    }
+
+    @media screen and (max-width: 1024px) {
+        max-width: 100%;
+    }
+
+    @media screen and (max-width: 526px) {
+        margin: 25px 0;
+        border-bottom: 1px solid #0A8BEA;
+        padding-bottom: 0;
+    }
+}
+
+.imageContainer{
+    position: relative;
+    width: 100%;
+    padding-bottom: 58%;
+
+    & > div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.articleImageDesc {
+    font: 19px/30px var(--noto-serif);;
+    letter-spacing: 0.61px;
+    color: #502707;
+    margin-top: 12px;
+    @media screen and (max-width:1440px) {
+        color: #48260C;
+    }
+    @media screen and (max-width: 526px) {
+        font: 14px/22px var(--simsunBold);
+        color: #311B0A;
+    }
+}
+
+.articleImageRights {
+    letter-spacing: 0.57px;
+    color: #B5ABAB;
+    text-align: right;
+    font: 500 19px/25px var(--noto-serif);
+    @media screen and (max-width:1440px) {
+        font: 500 16px/25px var(--noto-serif);
+    }
+    @media screen and (max-width: 526px) {
+        padding-bottom: 10px;
+        margin: 10px 0 5px 0;
+        border-bottom: 1px solid #D37A7ADB;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font: 500 19px/25px var(--noto-serif);
+    }
+}
+
+.copyrightAuthor {
+    margin-left: 10px;
+    font: 500 19px/25px var(--noto-serif);
+    @media screen and (max-width:1440px) {
+        font: 500 16px/25px var(--noto-serif);
+    }
+    @media screen and (max-width: 526px) {
+        font: 500 19px/25px var(--noto-serif);
+    }
+}
+
+.copyrightBuy {
+    text-decoration: none;
+    color: #3F71F7;
+    margin-left: 5px;
+    font: 500 19px/25px var(--noto-serif);
+    @media screen and (max-width:1440px) {
+        display: none;
+    }
+    @media screen and (max-width: 526px) {
+        display: block;
+        font: 500 19px/25px var(--noto-serif);
+    }
+}

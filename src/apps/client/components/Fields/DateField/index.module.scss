@@ -1,0 +1,85 @@
+.root {
+  width: 100%;
+}
+
+.title{
+  font: normal normal normal 25px/36px var(--arial);
+  letter-spacing: 0.75px;
+  color: #583211D5;
+  margin-bottom: 3px;
+  padding-left: 5px;
+
+  @media screen and (max-width:1440px) {
+    font: normal normal normal 18px/28px var(--arial);
+  }
+
+  @media screen and (max-width:768px) {
+    font: normal normal bold 16px/25px var(--arial);
+  }
+}
+
+.inputsWrapper{
+  position: relative;
+  & :global(.react-datepicker-wrapper) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  & :global(.react-datepicker__input-container ){
+    height: 100%;
+  }
+}
+
+.input{
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  width: 100%;
+  height: 74px;
+  font: normal normal 25px/50px var(--helvetica);
+  letter-spacing: 3.3px;
+  color: #554141DD;
+  padding: 24px 15px;
+  outline: none;
+  pointer-events: none;
+
+  &:focus{
+    box-shadow: 0px 3px 6px #D9D9D996;
+  }
+
+  @media screen and (max-width:1440px) {
+    height: 50px;
+    padding: 10px 15px;
+    font: normal normal 20px/29px var(--helvetica);
+  }
+
+  @media screen and (max-width:768px) {
+    height: 36px;
+    padding: 5px 10px;
+    font: normal normal 16px/23px var(--helvetica);
+  }
+}
+
+.input::placeholder{
+  color: #55414196;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 40px white inset !important;
+}
+
+.inputDate{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.inputDate::-webkit-calendar-picker-indicator{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

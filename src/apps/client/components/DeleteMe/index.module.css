@@ -1,0 +1,28 @@
+.locales {
+    position: absolute;
+    background-color: red;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.localesTitle {
+    font-family: var(--helvetica);
+}
+
+.localesList {
+    display: flex;
+    margin-top: 5px;
+}
+
+.locale {
+    cursor: pointer;
+    font-family: var(--helvetica);
+    margin-left: 5px;
+}
+
+.localeActive {
+    text-decoration: underline;
+}

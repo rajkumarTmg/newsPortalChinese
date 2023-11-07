@@ -1,0 +1,55 @@
+.root {
+    @media screen and (max-width: 1240px){
+        width: 66px;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.themeButton {
+    cursor: pointer;
+    width: 76px;
+    height: 28px;
+    background: rgba(235, 222, 222, .29);
+    box-shadow: 0px 1px 1px #DDD7D7B7;
+    border: 1px solid rgba(255, 255, 255, .34);
+    font: normal normal 18px var(--arial);
+    border-radius: 4px;
+    letter-spacing: 1.78px;
+    color: #2699FB;
+    transition: .2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        background: #2699FB;
+        border: 1px solid #2699FB;
+        color: #FFFFFF;
+    }
+
+    &:active{
+        background: #2699FB;
+        border: 1px solid #2699FB;
+        color: #FFFFFF;
+    }
+
+    &:not(:first-child) {
+        margin-left: 13px;
+    }
+
+    @media screen and (max-width: 1440px){
+        width: 66px;
+        height: 20px;
+        font: normal normal 15px var(--arial);
+        letter-spacing: 1.49px;
+    }
+
+    @media screen and (max-width: 1240px){
+        &:not(:first-child) {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+}

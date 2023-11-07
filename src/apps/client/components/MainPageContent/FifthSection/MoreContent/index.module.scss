@@ -1,0 +1,112 @@
+.root {
+    display: none  ;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+.titleWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    & .wholeLine {
+        height: 1px;
+        position: absolute;
+        width: 100%;
+        &:nth-child(1) {
+            top: 8px;
+            background-color: #3C5FBC;
+        }
+        &:nth-child(2) {
+            background-color: #1D3E98;
+        }
+        &:nth-child(3) {
+            bottom: 8px;
+            background-color: #D55A2D;
+        }
+    }
+}
+
+
+.title {
+    font: normal normal normal 24px/27px var(--liSu);
+    color: #3F71F7;
+    margin-left: 60px;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    & .overlap {
+        z-index: -1;
+        position: absolute;
+        height: 1px;
+        background-color: #ffffff;
+        &:nth-child(1) {
+            top: 8px;
+            width: calc(100% + 40px);
+            left: -20px;
+        }
+
+        &:nth-child(2) {
+            width: calc(100% + 30px);
+            left: -20px;
+        }
+
+        &:nth-child(3) {
+            bottom: 8px;
+            width: calc(100% + 40px);
+            left: -20px;
+        }
+    }
+}
+
+.image {
+    position: relative;
+    height: 254px;
+    margin-top: 17px;
+    & img {
+        border-radius: 10px;
+    }
+}
+
+.desc {
+    font: 700 22px/28px var(--noto-serif);
+    color: #4D4544;
+    margin-top: 10px;
+}
+
+.ad {
+    margin-top: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 118px;
+    border-radius: 14px;
+}
+
+.commercialLink {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    & img {
+        border-radius: 12px;
+        object-fit: contain;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.placeholder{
+    background: grey;
+    border-radius: 12px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}

@@ -1,0 +1,124 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageNumbers {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.page {
+    font: 30px/50px var(--arial);
+    color: #AA9C9C;
+    cursor: pointer;
+    padding: 5px;
+    user-select: none;
+    &.activePage {
+        color: #D55A2D;
+    }
+
+    @media screen and (max-width: 768px){
+        font: normal normal bold 19px/20px (--arial);
+        letter-spacing: 0.38px;
+    }
+
+    @media screen and (max-width: 400px){
+        font: normal normal bold 16px/20px (--arial);
+        letter-spacing: 0.38px;
+    }
+}
+
+.ellipses {
+    width: 30px;
+    font:  30px/50px var(--arial);
+    color: #AA9C9C;
+    user-select: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px){
+        font: normal normal bold 19px/20px (--arial);
+        letter-spacing: 0.38px;
+    }
+
+    @media screen and (max-width: 400px){
+        font: normal normal bold 16px/20px (--arial);
+        letter-spacing: 0.38px;
+    }
+}
+
+
+.navButton {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    cursor: pointer;
+    font:  50px/50px var(--arial);
+    color: #D55A2D;
+
+    svg{
+        path{
+            fill: rgba(214, 207, 207, 0.99);
+            transition: .3s ease;
+
+            &:nth-child(2){
+                stroke: rgba(214, 207, 207, 0.99);
+            }
+        }
+    }
+
+    &:hover{
+        svg{
+            path{
+                fill: #D55A2D;
+
+                &:nth-child(2){
+                    stroke: #D55A2D;
+                }
+            }
+        }
+    }
+
+    &:disabled{
+        color: #D6CFCFFC;
+        pointer-events: none;
+    }
+
+    &:first-child{
+        margin-right: 50px;
+    }
+
+    &:last-child{
+        margin-left: 50px;
+    }
+
+    @media screen and (max-width: 768px){
+        height: 20px;
+        font:  20px/20px var(--arial);
+
+        &:first-child{
+            margin-right: 0;
+        }
+
+        &:last-child{
+            margin-left: 0;
+        }
+
+        svg{
+            height: 100%;
+            width: auto;
+        }
+
+        &.next,
+        &.prev{
+            display: none;
+        }
+    }
+}

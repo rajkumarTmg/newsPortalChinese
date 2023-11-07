@@ -1,0 +1,107 @@
+.article {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    @media screen and (max-width:1024px) {
+        flex-direction: column;
+    }
+}
+
+.category {
+    font: 13px/23px var(--arial-bold);
+    color: #48290EA7;
+
+    @media screen and (max-width:526px) {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.divider{
+    color: #CE5742;
+}
+
+.source {
+    color: #3F71F7;
+}
+
+.link{
+    color: inherit;
+    text-decoration: none;
+}
+
+.articleImage {
+    display: block;
+    position: relative;
+    width: 260px;
+    height: 0;
+    padding-bottom: calc(260px * 0.7);
+    margin-right: 16px;
+    flex: 0 0 auto;
+
+    & > div{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    & img {
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @media screen and (max-width: 1280px) {
+        width: 234px;
+        padding-bottom: calc(234px * 0.78);
+    }
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+        padding-bottom: 55%;
+    }
+}
+
+.articleTitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
+    word-break: break-all;
+    font: 600 21px/31px var(--noto-serif);
+    letter-spacing: 0.67px;
+    color: #000000FC;
+
+    @media screen and (max-width: 526px) {
+        font: 600 18px/28px var(--noto-serif);
+    }
+}
+
+.articleMetaInfo {
+    font: normal normal normal 13px/23px var(--helvetica);
+    color: #847E7E;
+    margin-top: 5px;
+    & span {
+        margin-left: 10px;
+    }
+    @media screen and (max-width: 526px) {
+        display: none;
+    }
+}
+
+.articleDesc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
+    word-break: break-all;
+    font: 20px/30px var(--noto-serif);
+    letter-spacing: 0.26px;
+    color: #0F0B0A;
+    margin-top: 6px;
+    @media screen and (max-width: 526px) {
+        -webkit-line-clamp: 3;
+        margin-top: 14px;
+        color: #3C2009;
+        font: 14px/23px var(--noto-serif);
+    }
+}
